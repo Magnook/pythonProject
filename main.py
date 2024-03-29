@@ -1,5 +1,6 @@
 import pygame
 from avatar import Avatar
+from enemy import Enemy
 # Inicializando o PYGAME e a Janela
 pygame.init()
 
@@ -10,6 +11,9 @@ pygame.display.set_caption("Meu Jogo")
 # Objetos
 objectGroup = pygame.sprite.Group()
 avatar = Avatar(objectGroup)
+enemy = Enemy(objectGroup)
+enemy.rect.center = [200, 400]
+
 
 # Music
 pygame.mixer.music.load("data/music.wav")
