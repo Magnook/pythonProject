@@ -25,13 +25,14 @@ hit = pygame.mixer.Sound("data/hit.flac")
 
 # Base da aplicação
 gameLoop = True
+clock = pygame.time.Clock()
 if __name__ == "__main__":
-    # Mantendo a Janela aberta enquanto não apertar no Input pra fechar a Aba
+    clock.tick(60)
     while gameLoop:
+        # Mantendo a Janela aberta enquanto não apertar no Input pra fechar a Aba
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 gameLoop = False
-
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     hit.play()
