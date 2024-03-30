@@ -4,12 +4,13 @@ from enemy import Enemy
 # Inicializando o PYGAME e a Janela
 pygame.init()
 
-# Fazendo a Janela se manter me Loop pra não fechar sozinha
 display = pygame.display.set_mode([1280, 720])
 pygame.display.set_caption("Meu Jogo")
 
 # Objetos
+
 objectGroup = pygame.sprite.Group()
+
 avatar = Avatar(objectGroup)
 enemy = Enemy(objectGroup)
 enemy.rect.center = [200, 400]
@@ -35,10 +36,11 @@ if __name__ == "__main__":
                 if event.key == pygame.K_SPACE:
                     hit.play()
 
+        # Update Logic
+        objectGroup.update()
+
         # Draw
         display.fill([46, 46, 46])
-
-        objectGroup.update()
         objectGroup.draw(display)
 
         pygame.display.update()
